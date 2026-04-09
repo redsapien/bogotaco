@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0d0d0d">
+    <meta name="theme-color" content="#C8102E">
     <title>Bogotáco | ¡Comida Mexicana!</title>
 
-   <script type="text/javascript">
-    setTimeout(function() {
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/69d587c36839171c36f06e25/1jll1klem';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    }, 60000); // 60000 milisegundos = 60 segundos
-</script>
+    <script type="text/javascript">
+        setTimeout(function() {
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function() {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/69d587c36839171c36f06e25/1jll1klem';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        }, 60000);
+    </script>
 
-   <link rel="icon" type="image/png" href="Imagenes/favicon.ico">
+    <link rel="icon" type="image/png" href="Imagenes/favicon.ico">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/redsapien/bogotaco/main/Imagenes/favicon.png">
 
     <meta property="og:type" content="website">
@@ -47,74 +47,69 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Rowdies:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* ================= VARIABLES ================= */
         :root {
-            --rojo-mex: #E31837;
-            --verde-mex: #006847;
-            --amarillo-mex: #FACA0F;
+            --rojo-mex: #C8102E;    /* Rojo Sombrero */
+            --verde-mex: #006341;   /* Verde Bandera */
+            --amarillo-mex: #FACA0F; /* Amarillo Botones/Detalles */
             --oscuro: #0d0d0d;
             --blanco: #ffffff;
         }
 
-        /* ================= RESET & BASE ================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--oscuro);
+            background-color: var(--verde-mex); /* Parte central Verde */
             overflow-x: hidden;
         }
 
-        /* ================= NAVEGACIÓN ================= */
+        /* ================= NAVEGACIÓN ROJA (ARRIBA) ================= */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 65px; 
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            height: 70px; 
+            background: var(--rojo-mex);
             z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 2px solid var(--verde-mex);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 4px solid var(--amarillo-mex);
         }
 
         .navbar img {
-            height: 165px;
-            margin-top: 75px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
-            transition: transform 0.3s ease;
+            height: 120px;
+            margin-top: 50px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
         }
 
-        /* ================= SECCIÓN HERO ================= */
+        /* ================= HERO VERDE (CENTRO) ================= */
         .hero {
             position: relative;
-            min-height: 100vh;
+            height: 100vh;
+            height: 100dvh;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 80px 20px 40px 20px;
+            background-color: var(--verde-mex);
+            /* BASE AMARILLA (ABAJO) */
+            border-bottom: 15px solid var(--amarillo-mex);
         }
 
         .hero-video {
             position: absolute;
             top: 50%;
             left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translateX(-50%) translateY(-50%);
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
             z-index: 1;
             object-fit: cover;
+            opacity: 1; /* Video totalmente protagonista */
         }
 
         .hero-overlay {
@@ -123,110 +118,63 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(13, 13, 13, 0.6) 0%,
-                rgba(0, 104, 71, 0.2) 50%,
-                rgba(13, 13, 13, 0.95) 100%
-            );
+            /* Overlay muy transparente para visibilidad máxima del video */
+            background: rgba(0, 0, 0, 0.25);
             z-index: 2;
         }
 
-        /* Elementos Decorativos */
-        .corner-decor {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            z-index: 3;
-            opacity: 0.12;
-            pointer-events: none;
-            background-size: contain;
-            background-repeat: no-repeat;
-            filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(350deg);
-        }
-
-        .corner-tl { top: 90px; left: 20px; background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.58 2 4 5.58 4 10C4 12.33 5.04 14.41 6.69 15.83L6 22H18L17.31 15.83C18.96 14.41 20 12.33 20 10C20 5.58 16.42 2 12 2ZM8 9C7.45 9 7 8.55 7 8C7 7.45 7.45 7 8 7C8.55 7 9 7.45 9 8C9 8.55 8.55 9 8 9ZM12 13C11.45 13 11 12.55 11 12C11 11.45 11.45 11 12 11C12.55 11 13 11.45 13 12C13 12.55 12.55 13 12 13ZM16 9C15.45 9 15 8.55 15 8C15 7.45 15.45 7 16 7C16.55 7 17 7.45 17 8C17 8.55 16.55 9 16 9Z"/></svg>'); }
-        .corner-br { bottom: 20px; right: 20px; background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M22 16C22 16.55 21.55 17 21 17H3C2.45 17 2 16.55 2 16C2 14.34 3.34 13 5 13H6.35C7.14 9.61 10.22 7 13.9 7H14V5C14 4.45 13.55 4 13 4H11V2H13C14.66 2 16 3.34 16 5V7C17.61 7 19.06 7.74 20.04 8.89C21.24 10.32 22 12.07 22 14V16ZM8.53 13C8.15 11.28 9.47 10 11.13 10H16C17.66 10 19 11.34 19 13H8.53Z"/></svg>'); }
-
-        /* Contenido Principal */
         .hero-content {
             position: relative;
             z-index: 4;
             text-align: center;
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            padding: 20px;
+            width: 100%;
         }
 
-        /* Título Ajustado y Efecto Sutil */
         .hero-title {
             font-family: 'Rowdies', cursive;
-            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            font-size: clamp(2.8rem, 8vw, 5rem);
             color: var(--amarillo-mex);
             text-transform: uppercase;
-            text-shadow: 2px 2px 0px var(--rojo-mex), 4px 4px 0px rgba(0,0,0,0.8);
-            line-height: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .hero-title span {
-            display: inline-block;
-            animation: saltoSutil 3s infinite ease-in-out;
-        }
-
-        /* Retrasos para el efecto ola */
-        .hero-title span:nth-child(2) { animation-delay: 0.2s; color: var(--blanco); text-shadow: 2px 2px 0px var(--verde-mex), 4px 4px 0px rgba(0,0,0,0.8); }
-        .hero-title span:nth-child(4) { animation-delay: 0.4s; color: var(--blanco); text-shadow: 2px 2px 0px var(--verde-mex), 4px 4px 0px rgba(0,0,0,0.8); }
-
-        @keyframes saltoSutil {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            text-shadow: 3px 3px 0px var(--rojo-mex), 5px 5px 10px rgba(0,0,0,0.8);
+            line-height: 0.9;
+            margin-bottom: 20px;
         }
 
         .hero-text {
-            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
             color: var(--blanco);
             font-weight: 700;
-            line-height: 1.4;
-            max-width: 550px;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,1);
         }
 
-        .hero-text u {
-            color: var(--amarillo-mex);
-            text-decoration-color: var(--rojo-mex);
-            font-family: 'Rowdies', cursive;
-            background: rgba(0,0,0,0.3);
-            padding: 0 4px;
-        }
-
-        /* Botón CTA */
+        /* ================= BOTÓN SOLO UNA LÍNEA (OUTLINE) ================= */
         .btn-cta {
-            background-color: var(--rojo-mex);
-            color: var(--blanco);
+            background-color: transparent;
+            color: var(--amarillo-mex);
             text-decoration: none;
             font-family: 'Rowdies', cursive;
-            font-size: 1.2rem;
-            padding: 14px 35px;
-            border-radius: 50px;
+            font-size: 1.4rem;
+            padding: 15px 40px;
+            border-radius: 12px;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: all 0.3s ease;
+            display: inline-block;
+            /* Solo una línea de contorno */
+            border: 3px solid var(--amarillo-mex);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .btn-cta:hover {
-            transform: scale(1.05);
-            background-color: #b01028;
+            background-color: var(--amarillo-mex);
+            color: #000;
         }
 
-        /* ================= WHATSAPP ESTÁTICO ================= */
+        /* ================= WHATSAPP ================= */
         .wa-float-container {
             position: fixed;
-            bottom: 25px;
+            bottom: 40px;
             right: 25px;
             z-index: 9999;
             display: flex;
@@ -235,45 +183,24 @@
             text-decoration: none;
         }
 
-        .sombrero-float {
-            width: 50px;
-            margin-bottom: -12px;
-            z-index: 2;
-            filter: drop-shadow(0 3px 2px rgba(0,0,0,0.4));
-            transform: rotate(-5deg);
-        }
-
         .wa-button {
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            border: 3px solid #1ebe5d;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border: 3px solid #fff;
         }
 
-        .wa-button svg {
-            width: 32px;
-            height: 32px;
-            fill: currentColor;
-        }
+        .wa-button svg { width: 35px; height: 35px; fill: currentColor; }
 
-        /* ================= RESPONSIVE AJUSTADO ================= */
         @media (max-width: 768px) {
-            .navbar { height: 60px; }
-            .navbar img { 
-                height: 143px;
-                margin-top: 65px; 
-            }
-            .hero { padding-top: 120px; }
-            .hero-title { gap: 6px; }
-            .wa-float-container { bottom: 20px; right: 20px; }
-            .wa-button { width: 55px; height: 55px; }
-            .sombrero-float { width: 45px; }
+            .navbar img { height: 100px; margin-top: 40px; }
+            .hero-title { font-size: 3.2rem; }
         }
     </style>
 </head>
@@ -292,38 +219,21 @@
 
         <div class="hero-overlay"></div>
 
-        <div class="corner-decor corner-tl"></div>
-        <div class="corner-decor corner-br"></div>
-
         <div class="hero-content">
-            <h1 class="hero-title">
-                <span>El</span>
-                <span>verdadero</span>
-                <span>sabor</span>
-                <span>de</span>
-                <span>México</span>
-            </h1>
-
-            <p class="hero-text">
-                Atácate con el sabor más chingón y vive las porciones épicas y únicas en <u>Bogotáco</u>.
-            </p>
-
-            <a href="https://wa.me/573138762666?text=hola%20👋%20deseo%20pedir%20algo%20bien%20mexicano%20🌮🍔" class="btn-cta" target="_blank">Pedir ahora</a>
+            <h1 class="hero-title">¡EL SABOR QUE <br> TE TRAQUEA!</h1>
+            <p class="hero-text">Las porciones más épicas y chingonas de Bogotá.</p>
+            <a href="https://wa.me/573138762666?text=hola%20👋%20deseo%20pedir%20algo%20bien%20mexicano%20🌮🍔" class="btn-cta" target="_blank">¡ORDENAR AHORA!</a>
         </div>
     </section>
 
-    <a href="https://wa.me/573138762666?text=hola%20👋%20deseo%20pedir%20algo%20bien%20mexicano%20🌮🍔" target="_blank" class="wa-float-container" rel="noopener">
-        <svg class="sombrero-float" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <path d="M480 320c-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6c-12.2 12.1-29.1 19.6-47.5 19.6-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6C143.3 312.5 126.4 320 108 320c-18.4 0-35.3-7.5-47.5-19.6-8.9-8.9-20.2-14.8-32.5-17.6V264c12.3-2.8 23.6-8.7 32.5-17.6 12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 8.9 8.9 20.2 14.8 32.5 17.6v18.8c-12.3 2.8-23.6 8.7-32.5 17.6-12.2 12.1-29.1 19.6-47.5 19.6z" fill="#FACA0F"/>
-            <path d="M352 240c0-61.9-43-112-96-112s-96 50.1-96 112h192z" fill="#E31837"/>
-            <path d="M168 240h176v16H168z" fill="#006847"/>
-        </svg>
+    <a href="https://wa.me/573138762666?text=hola%20👋%20deseo%20pedir%20algo%20bien%20mexicano%20🌮🍔" target="_blank" class="wa-float-container">
         <div class="wa-button">
-            <svg viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </div>
     </a>
+
+</body>
+</html>
 
     
 <style>
@@ -474,11 +384,11 @@
 <section id="menu-bogotaco" class="menu-section">
     <style>
         .menu-section {
-            background-color: var(--oscuro);
+            background-color: var(--oscuro, #0d0d0d);
             padding: 100px 0;
             position: relative;
             overflow: hidden;
-            border-top: 2px solid var(--rojo-mex);
+            border-top: 2px solid var(--rojo-mex, #C8102E);
         }
 
         /* Fondo decorativo Pro sutil */
@@ -501,18 +411,18 @@
 
         .menu-title {
             font-family: 'Rowdies', cursive;
-            color: var(--blanco);
+            color: var(--blanco, #ffffff);
             font-size: clamp(2.3rem, 7vw, 4.5rem);
             text-transform: uppercase;
             transform: rotate(3deg);
-            text-shadow: 3px 3px 0px var(--verde-mex);
+            text-shadow: 3px 3px 0px var(--verde-mex, #006341);
             line-height: 0.9;
             margin-bottom: 20px;
         }
 
         .typewriter-container {
             font-family: 'Montserrat', sans-serif;
-            color: var(--amarillo-mex);
+            color: var(--amarillo-mex, #ffcc00);
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             font-weight: 700;
             min-height: 1.5em;
@@ -520,46 +430,37 @@
             margin-left: auto;
         }
 
-        /* --- SLIDER CONTAINER (SNAP) --- */
-        .slider-container {
+        /* --- GRID DE PRODUCTOS --- */
+        .productos-grid {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding: 20px 0 60px 0;
-            gap: 15px;
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px 5%;
             z-index: 5;
             position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .slider-container::-webkit-scrollbar { display: none; }
-
-        /* Tarjeta de Plato - Gigante en ancho, contenida en alto */
+        /* Tarjeta de Plato */
         .plato-card {
-            flex: 0 0 92%;
-            scroll-snap-align: center;
             background: #111111;
             border-radius: 25px;
             overflow: hidden;
             position: relative;
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid #1a1a1a;
-            margin-left: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
-        .plato-card:last-child { margin-right: 15px; }
-
-        /* Efecto al interactuar */
         .plato-card:active, .plato-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--amarillo-mex);
+            transform: translateY(-5px);
+            border-color: var(--amarillo-mex, #ffcc00);
         }
 
-        /* --- AJUSTE DE ALTURA DE IMAGEN --- */
         .plato-img-wrapper {
             width: 100%;
             aspect-ratio: 16 / 9; 
@@ -576,20 +477,53 @@
 
         .plato-card:hover .plato-img { transform: scale(1.05); }
 
+        /* PRECIO: Transparente y pegado al margen izquierdo inferior */
         .plato-badge {
             position: absolute;
-            top: 15px; right: 15px;
-            background: var(--rojo-mex);
-            color: white;
+            bottom: 0; 
+            left: 0;
+            /* Fondo más transparente y con desenfoque para no tapar el producto */
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--amarillo-mex, #ffcc00);
             padding: 8px 18px;
-            border-radius: 50px;
+            border-top-right-radius: 15px; /* Solo redondeado arriba-derecha */
             font-family: 'Rowdies', cursive;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-size: 1.4rem;
             z-index: 10;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+            border-right: 1px solid rgba(255, 204, 0, 0.3);
         }
 
-        /* --- INFO DEL PLATO (VISIBILIDAD GARANTIZADA) --- */
+        /* ETIQUETAS DE URGENCIA */
+        .badge-urgencia {
+            position: absolute;
+            top: 15px; 
+            right: 15px;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 10;
+            letter-spacing: 1px;
+            animation: pulse-urgencia 2s infinite;
+        }
+
+        .bg-fuego { background-color: var(--rojo-mex, #C8102E); }
+        .bg-oferta { background-color: #ff3300; }
+
+        @keyframes pulse-urgencia {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- INFO DEL PLATO --- */
         .plato-info {
             padding: 20px 25px 30px 25px;
             background-color: #111111;
@@ -603,78 +537,76 @@
 
         .plato-info h3 {
             font-family: 'Rowdies', cursive;
-            color: var(--amarillo-mex);
-            font-size: 1.9rem;
-            margin-bottom: 5px;
+            color: var(--blanco, #ffffff);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .plato-info p {
-            color: #ffffff;
-            font-size: 1.05rem;
+            color: #cccccc;
+            font-size: 1rem;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 400;
         }
 
         .btn-pedir-plato {
             display: inline-block;
-            background: var(--verde-mex);
+            background: var(--verde-mex, #006341);
             color: white;
             text-decoration: none;
-            padding: 14px 25px;
+            padding: 16px 25px;
             border-radius: 12px;
             font-family: 'Rowdies', cursive;
             text-transform: uppercase;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: 0.3s;
             width: 100%;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
 
         .btn-pedir-plato:hover {
             background: #008a5d;
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
-        /* --- RESPONSIVE PC --- */
+        /* RESPONSIVE */
+        @media (min-width: 768px) {
+            .productos-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
         @media (min-width: 1024px) {
-            .plato-card { flex: 0 0 31%; margin-left: 25px; }
-            .plato-img-wrapper { aspect-ratio: 1 / 1; } 
-            .plato-card:last-child { margin-right: 25px; }
-            .slider-container { gap: 0; padding: 40px 5%; }
-            .menu-header { padding: 0 10%; }
+            .plato-img-wrapper { aspect-ratio: 4 / 3; } 
+            .productos-grid { padding: 40px 10%; gap: 40px; }
         }
 
-        /* ================= ICONOS MEXICANOS AVANZADOS (PRO REALISTA) ================= */
+        /* ICONOS DECORATIVOS */
         .iconos-footer {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 40px;
             margin-top: 60px;
-            padding: 0 20px;
             z-index: 5;
             position: relative;
         }
 
         .mex-decor-pro {
-            width: 80px; height: 80px;
+            width: 60px; height: 60px;
             animation: flotarIconoPro 4s infinite ease-in-out;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
         }
 
-        /* Sombrero McQueen */
-        .decor-sombrero { animation-delay: 0s; }
-        /* Calavera */
-        .decor-calavera { animation-delay: 0.6s; }
-        /* Copa Tequila */
-        .decor-tequila { animation-delay: 1.2s; }
-
         @keyframes flotarIconoPro {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            50% { transform: translateY(-25px) rotate(10deg) scale(1.05); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
         }
     </style>
 
@@ -683,115 +615,80 @@
         <div class="typewriter-container" id="typewriter"></div>
     </div>
 
-    <div class="slider-container" id="menuSlider">
+    <div class="productos-grid" id="menuCatalogo">
+        
         <article class="plato-card">
-            <div class="plato-badge">$32.900</div>
             <div class="plato-img-wrapper">
-                <img src="Imagenes/Hamburguesa-Bogotaco-2.webp" alt="Bogo Burger" class="plato-img" loading="lazy">
+                <span class="badge-urgencia bg-fuego">🔥 MÁS VENDIDO</span>
+                <img src="Imagenes/Combo-bogotaco.webp" alt="Combo Bogotáco" class="plato-img" loading="lazy">
+                <div class="plato-badge">$75.000 <small style="font-size:0.7rem; color:#eee;">COP</small></div>
             </div>
             <div class="plato-info">
-                <h3>Bogo Burger</h3>
-                <p>La burger más traqueada de Fontibón, con carne premium y sabor brutal.</p>
-                <a href="https://wa.me/573138762666?text=Hola%20👋%20¡Deseo%20una%20burguer%20bien%20güerita!%20🍔🇲🇽" class="btn-pedir-plato" target="_blank">¡Órale, la quiero!</a>
+                <h3>COMBO BOGOTÁCO</h3>
+                <p>1 nachos con salsa, 4 tacos al pastor, 4 tacos de birria, 4 quesabirrias con caldo y 2 limonadas.</p>
+                <a href="https://wa.me/573214815488?text=%C2%A1Hola!%20%F0%9F%A4%A4%20Qu%C3%A9%20antojo%20tan%20brutal.%20Quiero%20pedir%20el%20*COMBO%20BOGOT%C3%81CO*%20%F0%9F%8C%AE%F0%9F%94%A5%20porfa." class="btn-pedir-plato" target="_blank">¡PEDIR AHORA!</a>
             </div>
         </article>
 
         <article class="plato-card">
-            <div class="plato-badge">$29.500</div>
             <div class="plato-img-wrapper">
-                <img src="Imagenes/Super-Taco.webp" alt="Súper Bogotáco" class="plato-img" loading="lazy">
+                <span class="badge-urgencia bg-oferta">15% OFF</span>
+                <img src="Imagenes/Perro-de-birria.webp" alt="Perro de Birria" class="plato-img" loading="lazy">
+                <div class="plato-badge">$36.200 <small style="font-size:0.7rem; color:#eee;">COP</small></div>
             </div>
             <div class="plato-info">
-                <h3>Súper Bogotáco</h3>
-                <p>Tacos gigantes con doble proteína y el guacamole casero más fresco de Bogotá.</p>
-                <a href="https://wa.me/573138762666?text=Hola%20👋%20¡Deseo%20un%20taco%20bien%20gigante!%20🌮🔥💪" class="btn-pedir-plato" target="_blank">¡Ándale, pedir ya!</a>
+                <h3>PERRO DE BIRRIA</h3>
+                <p>Salchicha americana, carne de birria, cebolla, cilantro, guacamole y queso cheddar. (Incluye papas y bebida).</p>
+                <a href="https://wa.me/573214815488?text=%C2%A1Hola!%20%F0%9F%A4%A4%20Me%20antoj%C3%A9%20mal.%20Quiero%20pedir%20el%20*PERRO%20DE%20BIRRIA*%20%F0%9F%8C%AD%F0%9F%A5%A3%20porfa." class="btn-pedir-plato" target="_blank">¡PEDIR AHORA!</a>
             </div>
         </article>
 
         <article class="plato-card">
-            <div class="plato-badge">$35.000</div>
             <div class="plato-img-wrapper">
-                <img src="Imagenes/Taco-Bogotaco-Guacamole.webp" alt="Taco Bogo-Guaca" class="plato-img" loading="lazy">
+                <img src="Imagenes/Salchipapa-parrillera.webp" alt="Salchipapa Parrillera" class="plato-img" loading="lazy">
+                <div class="plato-badge">$36.100 <small style="font-size:0.7rem; color:#eee;">COP</small></div>
             </div>
             <div class="plato-info">
-                <h3>Taco Guaca Pro</h3>
-                <p>Fusión traqueada de lomo, chicharrón crocante y una montaña de guacamole real.</p>
-                <a href="https://wa.me/573138762666?text=Hola%20👋%20¡Deseo%20uno%20con%20mucho%20pero%20mucho%20guacamole!%20🥑🇲🇽🔥" class="btn-pedir-plato" target="_blank">Órale, la quiero</a>
+                <h3>SALCHIPAPA PARRILLERA</h3>
+                <p>Salchicha, papa francesa, maíz, carne al pastor, pechuga asada, huevo de codorniz y queso gratinado.</p>
+                <a href="https://wa.me/573214815488?text=%C2%A1Hola!%20%F0%9F%A4%A4%20Qu%C3%A9%20delicia.%20Quiero%20pedir%20la%20*SALCHIPAPA%20PARRILLERA*%20%F0%9F%8D%9F%F0%9F%A7%80%20porfa." class="btn-pedir-plato" target="_blank">¡PEDIR AHORA!</a>
             </div>
         </article>
 
         <article class="plato-card">
-            <div class="plato-badge">$39.900</div>
             <div class="plato-img-wrapper">
-                <img src="Imagenes/Perro-Bogotaco.webp" alt="Perro Bogo-Mex" class="plato-img" loading="lazy">
+                <img src="Imagenes/Burrote.webp" alt="Burrote" class="plato-img" loading="lazy">
+                <div class="plato-badge">$30.300 <small style="font-size:0.7rem; color:#eee;">COP</small></div>
             </div>
             <div class="plato-info">
-                <h3>Bogo Perro Mex</h3>
-                <p>Perro caliente traqueado al estilo DF, con salchicha jumbo y pico de gallo.</p>
-                <a href="https://wa.me/573138762666?text=Hola%20👋%20¡Deseo%20un%20plato%20bien%20perro!%20🐶🔥🌮" class="btn-pedir-plato" target="_blank">¡Ándale, pídalo!</a>
+                <h3>BURROTE</h3>
+                <p>Tortilla de trigo, frijoles, carne al pastor, pollo, chorizo, queso mozzarella, pico de gallo y guacamole.</p>
+                <a href="https://wa.me/573214815488?text=%C2%A1Hola!%20%F0%9F%A4%A4%20Mucha%20hambre.%20Quiero%20pedir%20el%20*BURROTE*%20%F0%9F%8C%AF%F0%9F%A5%91%20porfa." class="btn-pedir-plato" target="_blank">¡PEDIR AHORA!</a>
             </div>
         </article>
+
     </div>
 
     <div class="iconos-footer">
-        
-        <svg class="mex-decor-pro decor-sombrero" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="gradSombrero" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ff4d4d;stop-opacity:1" /> <stop offset="100%" style="stop-color:#b30000;stop-opacity:1" /> </linearGradient>
-                <filter id="focoLuz">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
-                    <feFlood flood-color="white" opacity="0.5"/>
-                    <feComposite in2="blur" operator="in"/>
-                    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-            </defs>
-            <path d="M480 320c-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6c-12.2 12.1-29.1 19.6-47.5 19.6-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6C143.3 312.5 126.4 320 108 320c-18.4 0-35.3-7.5-47.5-19.6-8.9-8.9-20.2-14.8-32.5-17.6V264c12.3-2.8 23.6-8.7 32.5-17.6 12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 8.9 8.9 20.2 14.8 32.5 17.6v18.8c-12.3 2.8-23.6 8.7-32.5 17.6-12.2 12.1-29.1 19.6-47.5 19.6z" fill="url(#gradSombrero)" />
-            <path d="M352 240c0-61.9-43-112-96-112s-96 50.1-96 112" fill="#800000"/> <path d="M352 235c0-61.9-43-112-96-112s-96 50.1-96 112" fill="url(#gradSombrero)"/>
-            <path filter="url(#focoLuz)" d="M256 160l-15 35h30l-15 35l30-15h-30l15-35l-30 15z" fill="#FACA0F"/> 
+        <svg class="mex-decor-pro" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M480 320c-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6c-12.2 12.1-29.1 19.6-47.5 19.6-18.4 0-35.3-7.5-47.5-19.6-11.8-11.8-28-19.6-45.5-19.6s-33.7 7.8-45.5 19.6C143.3 312.5 126.4 320 108 320c-18.4 0-35.3-7.5-47.5-19.6-8.9-8.9-20.2-14.8-32.5-17.6V264c12.3-2.8 23.6-8.7 32.5-17.6 12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 11.8 11.8 28 19.6 45.5 19.6s33.7-7.8 45.5-19.6c12.2-12.1 29.1-19.6 47.5-19.6 18.4 0 35.3 7.5 47.5 19.6 8.9 8.9 20.2 14.8 32.5 17.6v18.8c-12.3 2.8-23.6 8.7-32.5 17.6-12.2 12.1-29.1 19.6-47.5 19.6z" fill="#C8102E" />
         </svg>
-
-        <svg class="mex-decor-pro decor-calavera" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <radialGradient id="gradHueso" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#d9d9d9;stop-opacity:1" /> </radialGradient>
-            </defs>
-            <path d="M256 16C132.3 16 32 116.3 32 240c0 49.6 16.1 95.4 43.5 132.8l23.1 31.3V448c0 17.7 14.3 32 32 32h251.4c17.7 0 32-14.3 32-32v-43.9l23.1-31.3c27.4-37.4 43.5-83.2 43.5-132.8C480 116.3 379.7 16 256 16z" fill="url(#gradHueso)"/>
-            <circle cx="192" cy="240" r="35" fill="#000000" />
-            <circle cx="192" cy="240" r="32" fill="#0d0d0d" /> <circle cx="320" cy="240" r="35" fill="#000000" />
-            <circle cx="320" cy="240" r="32" fill="#0d0d0d" /> <path d="M200 360h112v10h-112zM210 350h10v30h-10zM240 350h10v30h-10zM270 350h10v30h-10zM300 350h10v30h-10z" fill="#0d0d0d"/>
-        </svg>
-
-        <svg class="mex-decor-pro decor-tequila" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="gradCristal" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
-                    <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.1" />
-                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3" />
-                </linearGradient>
-                <linearGradient id="gradTequila" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffe066;stop-opacity:1" /> <stop offset="100%" style="stop-color:#f5c900;stop-opacity:1" /> </linearGradient>
-            </defs>
-            <path d="M416 32H96a16 16 0 0 0-16 16v224c0 88.37 71.63 160 160 160s160-71.63 160-160V48a16 16 0 0 0-16-16z" fill="url(#gradCristal)" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
-            <path d="M384 96H128v160c0 53 43 96 96 96s96-43 96-96z" fill="url(#gradTequila)" filter="url(#focoLuz)"/>
-            <ellipse cx="220" cy="130" rx="15" ry="30" fill="#ffffff" opacity="0.4" transform="rotate(-20 220 130)"/>
-            <path d="M256 384v96h-64v32h160v-32h-64v-96z" fill="#ffffff" fill-opacity="0.2"/>
+        <svg class="mex-decor-pro" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 16C132.3 16 32 116.3 32 240c0 49.6 16.1 95.4 43.5 132.8l23.1 31.3V448c0 17.7 14.3 32 32 32h251.4c17.7 0 32-14.3 32-32v-43.9l23.1-31.3c27.4-37.4 43.5-83.2 43.5-132.8C480 116.3 379.7 16 256 16z" fill="#f0f0f0"/>
         </svg>
     </div>
 
     <script>
-        // EFECTO MÁQUINA DE ESCRIBIR MCQUEEN (REFINADO)
         const texto = "En el corazón de Fontibón, traqueamos el sabor real de México con la abundancia que Bogotá exige.";
         const contenedor = document.getElementById('typewriter');
-        let i = 0;
+        let index = 0;
 
         function escribir() {
-            if (i < texto.length) {
-                contenedor.innerHTML += texto.charAt(i);
-                i++;
-                let speed = Math.random() * (70 - 25) + 25;
-                if (texto.charAt(i-1) === ',' || texto.charAt(i-1) === 'México') speed = 500; 
+            if (index < texto.length) {
+                contenedor.innerHTML += texto.charAt(index);
+                index++;
+                let speed = Math.random() * (60 - 30) + 30;
+                if (texto.charAt(index-1) === ',') speed = 400; 
                 setTimeout(escribir, speed);
             }
         }
@@ -803,42 +700,9 @@
             }
         }, { threshold: 0.5 });
         observerType.observe(contenedor);
-
-        // AUTO-SLIDER LIGERO (CSS SNAP FRIENDLY)
-        const slider = document.getElementById('menuSlider');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        let autoScrollInterval;
-
-        function startAutoScroll() {
-            if (autoScrollInterval) clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(() => {
-                if (!isDown && slider && !slider.matches(':hover')) {
-                    const cardWidth = slider.querySelector('.plato-card').offsetWidth + 15;
-                    const maxScroll = slider.scrollWidth - slider.clientWidth;
-                    if (slider.scrollLeft >= maxScroll - 10) {
-                        slider.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-                    }
-                }
-            }, 4500);
-        }
-
-        function stopAutoScroll() {
-            if (autoScrollInterval) clearInterval(autoScrollInterval);
-        }
-
-        if (slider) {
-            slider.addEventListener('mouseenter', stopAutoScroll);
-            slider.addEventListener('mouseleave', startAutoScroll);
-            if (!('ontouchstart' in window)) {
-                startAutoScroll();
-            }
-        }
     </script>
 </section>
+
 <section id="ritual-bogotaco" class="ritual-section">
     <style>
         .ritual-section {
@@ -1380,35 +1244,33 @@
         .footer-pro {
             position: relative;
             background-color: #000;
-            padding: 60px 0;
+            padding: 80px 0 40px 0;
             color: #fff;
             overflow: hidden;
-            border-top: 6px solid var(--rojo-mex);
+            border-top: 6px solid var(--rojo-mex, #C8102E);
         }
 
-        /* --- EFECTO VENTANA AJUSTADO --- */
+        /* --- VIDEO DE FONDO OPTIMIZADO --- */
         .footer-video-container {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
-            clip-path: inset(0 0 0 0);
         }
         
         .footer-video-container video {
-            position: absolute;
-            top: 50%; left: 50%;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            z-index: -1;
-            opacity: 0.7;
+            opacity: 0.5; /* Ajustado para que el video se vea pero no compita con el texto */
         }
 
         .footer-video-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0.4) 0%, 
+                rgba(0,0,0,0.8) 70%, 
+                rgba(0,0,0,1) 100%);
             z-index: 2;
         }
 
@@ -1421,105 +1283,150 @@
         }
 
         .reserva-title {
-            font-family: 'Rowdies';
-            color: var(--amarillo-mex);
-            font-size: 2.2rem;
+            font-family: 'Rowdies', cursive;
+            color: var(--amarillo-mex, #ffcc00);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             text-align: center;
             margin-bottom: 40px;
             text-transform: uppercase;
-            text-shadow: 3px 3px 0px var(--rojo-mex);
+            text-shadow: 3px 3px 0px var(--rojo-mex, #C8102E);
         }
 
-        .emoji-vivo {
-            display: inline-block;
-            animation: latido 1.2s infinite ease-in-out;
-            filter: drop-shadow(0 0 5px var(--amarillo-mex));
-        }
-        @keyframes latido {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2) rotate(5deg); }
-        }
-
-        /* --- FONDOS ULTRA-TRANSPARENTES (AJUSTADOS) --- */
+        /* --- FORMULARIO "PRO" GLASSMORPHISM --- */
         .reserva-direct-box {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 40px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 650px;
-            margin: 0 auto 50px auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
-        .sede-card {
-            background: rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(3px);
-            padding: 25px;
-            border-radius: 20px;
-            border-bottom: 3px solid var(--rojo-mex);
-            text-decoration: none;
-            color: #fff;
-            transition: 0.3s;
-            text-align: center;
-        }
-        .sede-card:hover { background: rgba(227, 24, 55, 0.1); transform: translateY(-5px); }
-
-        .form-grid-mex { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-grid-mex { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
         .input-mex {
             width: 100%;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 12px;
-            color: #fff;
-            border-radius: 8px;
-            font-family: 'Montserrat';
-        }
-        .btn-mex-full {
-            grid-column: 1 / -1;
-            background: var(--rojo-mex);
-            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255,255,255,0.1);
             padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Rowdies';
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(227, 24, 55, 0.3);
+            color: #fff;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
         }
 
+        .input-mex:focus {
+            border-color: var(--amarillo-mex, #ffcc00);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+        }
+
+        /* FIX PARA SELECTOR DE FECHA EN MÓVIL */
+        input[type="datetime-local"] {
+            position: relative;
+        }
+        
+        /* Estilo para que el placeholder sea visible antes de seleccionar */
+        .input-mex::placeholder { color: rgba(255,255,255,0.5); }
+
+        .btn-mex-full {
+            grid-column: 1 / -1;
+            background: var(--rojo-mex, #C8102E);
+            color: #fff;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Rowdies', cursive;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-mex-full:hover {
+            transform: scale(1.02) translateY(-3px);
+            background: #e31837;
+            box-shadow: 0 12px 25px rgba(200, 16, 46, 0.6);
+        }
+
+        /* --- SEDES Y MAPAS (REPARADOS) --- */
         .sedes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
-        /* --- REDES SOCIALES ASEGURADAS --- */
+        .sede-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 4px solid var(--rojo-mex, #C8102E);
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s ease;
+            text-align: center;
+        }
+
+        .sede-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+            border-color: var(--amarillo-mex, #ffcc00);
+        }
+
+        .sede-card h3 { 
+            font-family: 'Rowdies', cursive; 
+            margin-bottom: 10px; 
+            font-size: 1.4rem;
+            color: var(--amarillo-mex, #ffcc00);
+        }
+
+        .sede-card p { opacity: 0.9; margin-bottom: 5px; font-size: 0.95rem; }
+
+        /* --- REDES SOCIALES --- */
         .footer-social-bar { 
             display: flex; 
             justify-content: center; 
-            gap: 30px; 
-            margin: 30px 0; 
+            gap: 40px; 
+            margin: 40px 0; 
         }
+        
         .social-btn { 
-            font-size: 2.2rem; 
+            font-size: 2.5rem; 
             color: #fff; 
-            text-decoration: none; 
             transition: 0.3s; 
         }
-        .social-btn:hover { color: var(--amarillo-mex); transform: scale(1.2); }
+        
+        .social-btn:hover { 
+            color: var(--amarillo-mex, #ffcc00); 
+            transform: translateY(-5px); 
+        }
 
-        .red-sapien-brand { color: var(--rojo-mex); text-decoration: none; font-weight: 900; }
+        .red-sapien-brand { 
+            color: var(--rojo-mex, #C8102E); 
+            text-decoration: none; 
+            font-weight: 900; 
+            letter-spacing: 1px;
+        }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .form-grid-mex { grid-template-columns: 1fr; }
-            .reserva-title { font-size: 1.5rem; }
+            .reserva-direct-box { padding: 25px; }
+            .footer-pro { padding: 60px 0; }
         }
     </style>
 
     <div class="footer-video-container">
-        <video autoplay muted loop playsinline preload="none">
+        <video autoplay muted loop playsinline preload="auto">
             <source src="Videos/Reservas-bogotaco.mp4" type="video/mp4">
         </video>
         <div class="footer-video-overlay"></div>
@@ -1527,41 +1434,49 @@
 
     <div class="footer-container">
         <h2 class="reserva-title">
-            <span class="emoji-vivo">🍹</span> COCTELES Y MÚSICA EN VIVO <span class="emoji-vivo">🎶</span>
+            🍹 COCTELES Y MÚSICA EN VIVO 🎶
         </h2>
 
         <div class="reserva-direct-box">
             <form id="formReservaFinal" class="form-grid-mex">
                 <input type="text" id="rNombre" class="input-mex" placeholder="Tu Nombre" required>
-                <input type="datetime-local" id="rFecha" class="input-mex" required>
-                <input type="tel" id="rTel" class="input-mex" placeholder="WhatsApp" required>
+                
+                <input type="text" id="rFecha" class="input-mex" placeholder="📅 Selecciona Fecha y Hora" 
+                       onfocus="(this.type='datetime-local')" onblur="if(!this.value)this.type='text'" required>
+                
+                <input type="tel" id="rTel" class="input-mex" placeholder="WhatsApp (Ej: 312...)" required>
+                
                 <select id="rSede" class="input-mex" required>
-                    <option value="" disabled selected>Selecciona Sede</option>
+                    <option value="" disabled selected>📍 Selecciona Sede</option>
                     <option value="Fontibon Central">Fontibón Central</option>
                     <option value="Cofradia">Cofradía</option>
                     <option value="La Laguna">La Laguna</option>
                 </select>
+                
                 <button type="submit" class="btn-mex-full">¡RESERVAR POR WHATSAPP!</button>
             </form>
         </div>
 
         <div class="sedes-grid">
-            <a href="https://maps.app.goo.gl/FontibonCentralBogotaco" target="_blank" rel="noopener noreferrer" class="sede-card">
+            <a href="https://www.google.com/maps/search/?api=1&query=Bogotaco+Fontibon+Central+Cl+20+99-50" target="_blank" rel="noopener noreferrer" class="sede-card">
                 <h3>FONTIBÓN CENTRAL</h3>
                 <p>Cl 20 #99-50</p>
-                <p><i class="fa-solid fa-phone"></i> 313 8762666</p> <small style="color:var(--amarillo-mex)">Ver Mapa →</small>
+                <p><i class="fa-solid fa-phone"></i> 313 8762666</p>
+                <small style="color:var(--amarillo-mex, #ffcc00); font-weight:700;">VER MAPA →</small>
             </a>
-            <a href="https://maps.app.goo.gl/CofradiaBogotaco" target="_blank" rel="noopener noreferrer" class="sede-card" style="border-color: var(--amarillo-mex);">
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Bogotaco+Cofradia+Cl+23g+103-34" target="_blank" rel="noopener noreferrer" class="sede-card" style="border-color: var(--amarillo-mex, #ffcc00);">
                 <h3>COFRADÍA</h3>
                 <p>Cl. 23g #103-34</p>
                 <p><i class="fa-solid fa-phone"></i> 321 2585221</p>
-                <small style="color:var(--amarillo-mex)">Ver Mapa →</small>
+                <small style="color:var(--amarillo-mex, #ffcc00); font-weight:700;">VER MAPA →</small>
             </a>
-            <a href="https://maps.app.goo.gl/LaLagunaBogotaco" target="_blank" rel="noopener noreferrer" class="sede-card" style="border-color: var(--verde-mex);">
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Bogotaco+La+Laguna+Cl+16h+100-03" target="_blank" rel="noopener noreferrer" class="sede-card" style="border-color: #006341;">
                 <h3>LA LAGUNA</h3>
                 <p>Cl. 16h #100-03</p>
                 <p><i class="fa-solid fa-phone"></i> 321 3984882</p>
-                <small style="color:var(--amarillo-mex)">Ver Mapa →</small>
+                <small style="color:var(--amarillo-mex, #ffcc00); font-weight:700;">VER MAPA →</small>
             </a>
         </div>
 
@@ -1571,7 +1486,7 @@
             <a href="https://www.tiktok.com/@bogotacocomidamexicana" target="_blank" rel="noopener noreferrer" class="social-btn"><i class="fab fa-tiktok"></i></a>
         </div>
 
-        <div class="creadores" style="text-align: center; font-size: 0.8rem; opacity: 0.7;">
+        <div class="creadores" style="text-align: center; font-size: 0.85rem; opacity: 0.8; margin-top: 20px;">
             <p>© 2026 BOGOTÁCO - Hecho con pasión por 
                 <a href="https://redsapien.com" target="_blank" rel="noopener noreferrer" class="red-sapien-brand">RED SAPIEN</a>
             </p>
@@ -1583,11 +1498,15 @@
             e.preventDefault();
             const nom = document.getElementById('rNombre').value;
             const fec = document.getElementById('rFecha').value;
+            const tel = document.getElementById('rTel').value;
             const sed = document.getElementById('rSede').value;
             
-            // Link de WhatsApp asegurado
-            const texto = `*RESERVA BOGOTÁCO*%0A👤 *Nombre:* ${nom}%0A📅 *Fecha:* ${fec}%0A📍 *Sede:* ${sed}`;
-            window.open(`https://wa.me/573138762666?text=${texto}`, '_blank');
+            // Formatear la fecha para que sea legible en WhatsApp
+            const fechaFormateada = fec.replace('T', ' a las ');
+            
+            const mensaje = `*¡HOLA BOGOTÁCO!* 🌮🔥%0AQuiero realizar una reserva:%0A%0A👤 *Nombre:* ${nom}%0A📅 *Fecha:* ${fechaFormateada}%0A📍 *Sede:* ${sed}%0A📱 *Contacto:* ${tel}%0A%0A_Confirmar disponibilidad, por favor._`;
+            
+            window.open(`https://wa.me/573138762666?text=${mensaje}`, '_blank');
         });
     </script>
 </footer>
